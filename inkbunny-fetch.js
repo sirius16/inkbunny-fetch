@@ -3,10 +3,7 @@ end = /page=\d+/;
 $.ajaxSetup({
 	async: false
 });
-
-var script = document.createElement('script');
-script.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js";
-document.getElementsByTagName('head')[0].appendChild(script);
+hi=[];
 var pages = $("[title*='final page']")[0].href.match(/\d+/g).last();
 for (i = 1; i < eval(pages) + 1; i++) {
 	jQuery.ajax({

@@ -4,6 +4,7 @@ $.ajaxSetup({
 	async: false
 });
 hi=[];
+hello="";
 var pages = $("[title*='final page']")[0].href.match(/\d+/g).last();
 for (i = 1; i < eval(pages) + 1; i++) {
 	jQuery.ajax({

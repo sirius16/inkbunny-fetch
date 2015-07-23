@@ -19,8 +19,12 @@ for (i = 1; i < eval(pages) + 1; i++) {
 		script: true
 	});
 }
+var obj= $('<textarea />');
+$("body").append(obj);
 for (i of hi) {
-	hello += i + "\n"
+	hello += i + "\n";
+	obj.append(i+"\n");
 }
 console.clear();
 console.log(hello);
+obj.select().focus();

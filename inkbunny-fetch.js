@@ -4,7 +4,6 @@ $.ajaxSetup({
 	async: false
 });
 hi=[];
-hello="";
 var pages = $("[title*='final page']")[0].href.match(/\d+/g).last();
 for (i = 1; i < eval(pages) + 1; i++) {
 	jQuery.ajax({
@@ -21,10 +20,8 @@ for (i = 1; i < eval(pages) + 1; i++) {
 }
 var obj= $('<textarea />');
 $("body").append(obj);
-for (i of hi) {
-	hello += i + "\n";
-	obj.append(i+"\n");
-}
+var hello=hi.join("\n");
 console.clear();
 console.log(hello);
 obj.select().focus();
+alert(hi.length);

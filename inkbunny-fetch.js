@@ -23,10 +23,8 @@ for (i = 1; i < eval(pages) + 1; i++) {
 	});
 }
 
-var obj = $j('<textarea />');
+hello = hi.reverse().join("\n");
+var obj = $j("<textarea />").text(hello);
 $j("body").append(obj);
-var hello = hi.join("\n");
-console.clear();
-console.log(hello);
 obj.select().focus();
 alert(hi.length);

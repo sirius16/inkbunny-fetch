@@ -1,23 +1,19 @@
 var URL = window.location.href;
 end = /page=\d+/;
 
-
-$.ajaxSetup({
+$j.ajaxSetup({
 	async : false
 });
 
-
 hi = [];
 
-
-var pages = $("[title*='final page']")[0].href.match(/\d+/g).last();
-
+var pages = $j("[title*='final page']")[0].href.match(/\d+/g).last();
 
 for (i = 1; i < eval(pages) + 1; i++) {
 	jQuery.ajax({
 		url : URL.replace(end, "page=" + i),
 		success : function (result) {
-			var $result = eval($(result));
+			var $result = eval($j(result));
 			$result.find("a[href*=submissionview]").map(function (i, j) {
 				return hi.push(j.href);
 			});
@@ -27,9 +23,8 @@ for (i = 1; i < eval(pages) + 1; i++) {
 	});
 }
 
-
-var obj = $('<textarea />');
-$("body").append(obj);
+var obj = $j('<textarea />');
+$j("body").append(obj);
 var hello = hi.join("\n");
 console.clear();
 console.log(hello);

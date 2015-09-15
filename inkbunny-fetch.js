@@ -22,8 +22,13 @@ for (i = 1; i < eval(pages) + 1; i++) {
 		script : true
 	});
 }
-
 hello = hi.reverse().join("\n");
+date = new Date();
+date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+time = date.toJSON().replace(/T|\..*/g, " ").replace(/:/g, "-").trim();
+var link = document.createElement('a');
+link.download = time + ".txt";
+link.href = 'data:,' + hello;
 var obj = $j("<textarea />").text(hello);
 $j("body").append(obj);
 obj.select().focus();

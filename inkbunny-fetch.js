@@ -29,4 +29,5 @@ time = date.toJSON().replace(/T|\..*/g, " ").replace(/:/g, "-").trim();
 var link = document.createElement('a');
 link.download = "Inkbunny "+ time + ".txt";
 link.href = 'data:,' + hello;
+link.click()
 alert(hi.length);

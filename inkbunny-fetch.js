@@ -10,7 +10,7 @@ hi = [];
 var pages = $j("[title*='final page']")[0].href.match(/\d+/g).last();
 
 for (i = 1; i < eval(pages) + 1; i++) {
-	jQuery.ajax({
+	$j.ajax({
 		url : URL.replace(end, "page=" + i),
 		success : function (result) {
 			var $result = eval($j(result));

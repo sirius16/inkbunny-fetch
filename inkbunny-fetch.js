@@ -23,7 +23,7 @@ for (i = 1; i < eval(pages) + 1; i++) {
 		script : true
 	});
 }
-hello = hi.reverse().join("\n");
+hello = hi.reverse().join("%0A");
 date = new Date();
 date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
 time = date.toJSON().replace(/T|\..*/g, " ").replace(/:/g, "-").trim();
